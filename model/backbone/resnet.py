@@ -25,7 +25,7 @@ class Bottleneck(nn.Module):
         width = int(planes * (base_width / 64.)) * groups
 
         self.conv1 = conv1x1(inplanes, width)
-        self.bn1 = norm_layer(width)
+        self.bn1 = norm_layer(width)#bn层
         self.conv2 = conv3x3(width, width, stride, groups, dilation)
         self.bn2 = norm_layer(width)
         self.conv3 = conv1x1(width, planes * self.expansion)
